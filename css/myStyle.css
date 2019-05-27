@@ -1,0 +1,41 @@
+.red {
+  color: rgb(240, 26, 26);
+}
+.blue {
+  color: rgb(18, 118, 211);
+}
+.bold {
+  font-weight: 700;
+}
+.icon {
+  width: 150px;
+}
+.reveal section img.icon {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0);
+}
+.react {
+  color: #61dafb;
+}
+.firstSlide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reveal section img.russianTrends,
+.reveal section img.worldTrends,
+.reveal section img.map {
+  width: 900px;
+}
+.reveal section img.data {
+  width: 700px;
+}
+.reveal section img.redux {
+  width: 500px;
+}
+.small {
+  font-size: 30px;
+}

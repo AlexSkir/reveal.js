@@ -1,49 +1,470 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/myStyle.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h2 class="firstSlide"><img src="src/1200px-React-icon.svg.png" class="icon"><span class="react">React</span>
+				</h2>
+				<br>
+				<h5>Alexandra Skirnevskaya</h5>
+			</section>
+			<section>
+				<span class="react">React</span> is a declarative, efficient, and flexible JavaScript library for building
+				user interfaces.
+				<br>
+				<br>
+				It was first deployed on Facebook's newsfeed in 2011 and later on Instagram.com in 2012. <br>
+				<br>
+				The latest available version is 16.8.6
+
+				<aside class="notes">
+					React is a JavaScript library for building user interfaces. It lets you compose complex UIs from small
+					and isolated pieces of code called “components”. Some people call it a framework, but actually
+					it's not. React is just a view layer. So it is not directly comparable to frameworks like angular.
+				</aside>
+			</section>
+
+			<section>
+				<h3><span class="react">Reasons why people choose to program with React:
+					</span></h3>
+				<ul>
+					<li class="fragment fade-up">
+						<span class="red">React is fast.</span> Apps made in React can handle complex updates and
+						still feel quick and responsive.
+					</li>
+
+					<li class="fragment fade-up">
+						<span class="red">React is modular.</span> Instead of writing large, dense files of code,
+						you can write many smaller, reusable files.
+					</li>
+
+					<li class="fragment fade-up">
+						<span class="red">React is scalable.</span> Large programs that display a lot of changing
+						data are where React performs best.
+					</li>
+
+					<li class="fragment fade-up">
+						<span class="red">React is flexible.</span> You can use React for interesting projects
+						that have nothing to do with making a web app.
+					</li>
+				</ul>
+
+				<aside class="notes">
+					Popularity of React is growing. And there are just some features why more and more professionals
+					chose this library for their projects: <br>
+					- first of all it's fast, you can maintain updates of your applications without loss of performance. <br>
+					- other benefit is modularity of React, which helps to keep the code cleen and easier to support. <br>
+					- Scalability is another appealing feature, that allows to extend functionality
+					without large changes in code. <br>
+					- Also, React can be used to create very different types of projects, people are still figuring out React’s
+					potential. <br>
+				</aside>
+			</section>
+			<section>
+				<h3><span class="react">Statistics</span></h3>
+				<section>
+					<img data-src="src/Russia.png" class="russianTrends">
+					<aside class="notes">
+						Few words about statistics. <br>
+						This line chart represents the dynamics of the popularity of web search by key words
+						React Angular and Vue since 2013-th to the present day in Russia <br>
+						As we can see the level of interest to React increased significantly during that time,
+						outgrowing Angular and reaching the peak in last year. And this trend remains stable.
+					</aside>
+				</section>
+				<section>
+					<img data-src="src/Worldwide.png" class="worldTrends">
+
+					<aside class="notes">
+						Quite similar situation in trends worldwide with slight differences.
+					</aside>
+				</section>
+				<section>
+					<img data-src="src/map.png" class="map">
+					<aside class="notes">
+						there is a regional representation of interest to React Angular and Vue across the world.
+					</aside>
+				</section>
+			</section>
+			<section>
+				<h3><span class="react">Notable features</span></h3>
+				<ul>
+					<li>JSX</li>
+					<li>Props</li>
+					<li>State</li>
+					<li>Virtual DOM</li>
+					<li>Lifecycle methods</li>
+				</ul>
+				<aside class="notes">
+					Notable features of React: JSX, props, state, virtual DOM, lifecycle methods.
+				</aside>
+			</section>
+
+			<section>
+				<h3><span class="react">JSX</span></h3>
+				<section>
+					<pre><code class="hljs" data-trim>
+						const greetings = <h1>Hello world</h1>;
+						const navBar = <nav>I am a nav bar</nav>;
+						<a href="https://www.example.com"><h1>Click me!</h1></a>
+						const someText = <p class&#78ame="someClass"> Some text </p>;
+					</code></pre>
+					<br>
+					Selfclosing tags:
+					<pre><code class="hljs" data-trim>
+						&#60;br&#47;&#62;;
+						const image = &#60;img src="images/image.jpg" &#47;&#62;;
+					</code></pre>
+					<aside class="notes">
+						JSX or JavaScript XML is an extension to the JavaScript language syntax. It combines JS and HTML syntax.
+						HTML part may contain some text enclosed in tags such as 'headings', 'paragraphs' and others. <br>
+						And we can add attributes like in common HTML, such as source in 'image' tag in the example.
+					</aside>
+				</section>
+				<section>
+					<span>JavaScript expressions can be used in curly braces:</span>
+					<pre><code class="hljs" data-trim>
+						const name = "John"; 
+						const greeting = <p>Hello, {name}!</p>;
+						
+						const num = <h1>2 + 3 = {2 + 3}</h1> 
+						// <h1>2 + 3 = 5</h1>
+					</code></pre>
+					<aside class="notes">
+						JavaScript expressions also can be used inside JSX blocks if they are enclosed in curly braces. <br>
+						JSX provides a way to structure component rendering.
+					</aside>
+				</section>
+			</section>
+
+			<section>
+				<h3><span class="react">Props</span></h3>
+				<section>
+					<p>Pass props to a Component:</p>
+					<pre><code class="hljs" data-trim data-line-numbers>
+						class Greeting extends React.Component {
+						  render() {
+						    return <h1>Hi there, {this.props.firstName}!</h1>;
+						  }
+						}
+						
+						ReactDOM.render(
+						  &#60;Greeting firstName="John" &#47;&#62;, 
+						  document.getElementById("app")
+						);								
+					</code></pre>
+
+					<aside class="notes">
+						Every component has properties or shortly - props. A component’s props is an object. It holds information
+						about that component. <br>
+						We can pass props to a component by adding attribute with name and value, as shown on the 8th line
+						in the example <br>
+						We used that props in H1 heading tag on third line, so it's value will be displayed on the web page.
+					</aside>
+				</section>
+				<section>
+					Use props to make decisions:
+					<pre><code class="hljs" data-trim data-line-numbers>
+						class Greeting extends React.Component {
+						  render() {
+						    if (this.props.signedIn == false) {
+						      return &#60;h1&#62;Sign in&#60;&#47;h1&#62;;
+						    } else {
+						      return &#60;h1&#62;Hi there, {this.props.name}!&#60;&#47;h1&#62;;
+						    }
+						  }
+						}
+						
+						ReactDOM.render(
+						  &#60;Greeting name="John" signedIn={true} &#47;&#62;, 
+						  document.getElementById("app")
+						);
+					</code></pre>
+					<aside class="notes">
+						Props can also be used to make decisions, as shown in this example. Class Greeting accepts two Props
+						'name' and 'signed in'. The information displayed on the web page will depend on the value of
+						'signed in' prop.
+					</aside>
+				</section>
+				<section>
+					Pass props from component to component
+					<pre> In greeting.js:<code class="hljs" data-trim data-line-numbers>
+						import React from "react";
+						
+						export class Greeting extends React.Component {
+						  render() {
+						    return <h1>Hi there, {this.props.name}!</h1>;
+						  }
+						}
+					</code></pre>
+					<aside class="notes">
+						A component can pass information to another component. <br>
+						In order to do that you should export the component from the first js file using key word "export".
+					</aside>
+				</section>
+				<section>
+					Pass props from component to component
+					<pre> In app.js:<code class="hljs" data-trim data-line-numbers>
+						import React from 'react';
+						import ReactDOM from 'react-dom';
+						import { Greeting } from './Greeting'
+						
+						class App extends React.Component {
+						  render() {
+						    return (
+						      <div>
+						        <h1>Hello and welcome!</h1>
+						        &#60;Greeting name="John"&#47;&#62;
+						      </div>
+						    );
+						  }
+						}
+						ReactDOM.render(&#60;App &#47;&#62;, document.getElementById('app'));
+					</code></pre>
+					<aside class="notes">
+						and import that component to the second js file which we did on line 3. Then, we used the instance of
+						greeting in App component (line 10), so h1 heading from greeting component
+						will be rendered on the web page below "Hello and welcome!".
+					</aside>
+				</section>
+			</section>
+			<section>
+				<h3><span class="react">State</span></h3>
+				<section>
+					<pre><code class="hljs" data-trim data-line-numbers>
+				class TodayImFeeling extends React.Component {
+				  constructor(props) {
+				    super(props);
+				    this.state = { mood: "decent" };
+				  }
+						
+				  render() {
+				    return (
+				      <h1>I am feeling {this.state.mood}!</h1>
+				    );
+				  }
+				}
+			  </code></pre>
+					<aside class="notes">
+						A React component can access dynamic information in two ways: props and state.
+						Unlike props, a component’s state is not passed in from the outside. A component decides its own state. <br>
+						To set a state property you should declare it inside of a constructor method, calling parent constructor
+						with key word 'super'. <br>
+						this.state should be equal to an object, like in the 4th line. <br>
+						As props, state also can be read and displayed on web page using the expression
+						this.state.name-of-property in curly braces.
+					</aside>
+				</section>
+				<section>
+					Update state with this.setState
+					<pre><code class="hljs" data-trim data-line-numbers>
+					class Mood extends React.Component {
+					  constructor(props) {
+					    super(props);
+					    this.state = { mood: "good" };
+					    this.toggleMood = this.toggleMood.bind(this);
+					  }
+					  toggleMood() {
+					    const newMood = this.state.mood == "good" ? "bad" : "good";
+					    this.setState({ mood: newMood });
+					  }
+					  render() {
+					    return (&#60;button onClick={this.toggleMood}&#62;Click&#60;/button&#62;);
+					  }
+					}
+					</code></pre>
+					<aside class="notes">
+						The state can be changed by calling the function this.setState() like in line 9. <br>
+						The most common way to do that is to call a custom function like toggleMood in the example.
+						It wraps a this.setState call. <br>
+						When button is clicked the state changes and it AUTOMATICALLY calls render method so we can see changes
+						immediately.
+					</aside>
+				</section>
+			</section>
+			<section>
+				<h3><span class="react">Virtual DOM</span></h3>
+				<ul>
+					<li>creating data-structure cache of real DOM</li>
+					<li>chaging components of virtual DOM</li>
+					<li>computing the resulting differences</li>
+					<li>rerendering in real DOM only changed subcomponents</li>
+				</ul>
+				<aside class="notes">
+					Another notable feature is the use of a "virtual Document Object Model". React creates an in-memory
+					data-structure cache, computes the resulting differences, and then updates the browser's displayed DOM
+					efficiently. <br>
+					This allows the programmer to write code as if the entire page is rendered on each change,
+					while the React libraries only render subcomponents that actually change.
+				</aside>
+			</section>
+			<section>
+				<h3><span class="react">Lifecycle methods</span></h3>
+				<section>
+					<ul>
+						<li>Mounting</li>
+						<li>Updating</li>
+						<li>Unmounting</li>
+					</ul>
+					<aside class="notes">
+						Lifecycle methods are methods that get called at certain moments in a component’s life. <br>
+						There are three categories of lifecycle methods: mounting, updating, and unmounting.
+					</aside>
+				</section>
+				<section>
+					<ul>
+						<li><span class="red">Mounting</span>
+							<ul class="small">
+								<li class="fragment highlight-green">componentWillMount</li>
+								<li class="fragment highlight-green">render</li>
+								<li class="fragment highlight-green">componentDidMount</li>
+							</ul>
+						</li>
+						<li>Updating</li>
+						<li>Unmounting</li>
+					</ul>
+					<aside class="notes">
+						A component “mounts” when it renders for the first time. There are three mounting lifecycle methods: <br>
+						componentWillMount, render and componentDidMount. <br>
+						"componentWillMount" gets called right before render, then component renders, and componentDidMount
+						gets called right after the HTML has finished loading.
+					</aside>
+				</section>
+				<section>
+					<ul>
+						<li>Mounting</li>
+						<li><span class="red">Updating</span>
+							<ul class="small">
+								<li class="fragment highlight-green">componentWillReceiveProps</li>
+								<li class="fragment highlight-green">shouldComponentUpdate</li>
+								<li class="fragment highlight-green">componentWillUpdate</li>
+								<li class="fragment highlight-green">render</li>
+								<li class="fragment highlight-green">componentDidUpdate</li>
+							</ul>
+						</li>
+						<li>Unmounting</li>
+					</ul>
+					<aside class="notes">
+						A component updates every time that it renders, starting with the second render and
+						it automatically calls all five of its methods, in order. <br>
+						-"componentWillReceiveProps" gets called before the rendering begins and only gets called
+						if the component will receive props. <br>
+						-"shouldComponentUpdate" should return either true or false. If shouldComponentUpdate returns true,
+						then component updates if returns false, then the component will not update! None of the remaining
+						lifecycle methods for that updating period will be called, including render. <br>
+						-The main purpose of "componentWillUpdate" is to interact with things outside of the React architecture
+						before a component renders, for example to check the window size or to interact with an API. <br>
+						- When a component instance updates, "componentDidUpdate" gets called after any rendered HTML has
+						finished loading. "componentDidUpdate" is usually used for interacting with things outside of the
+						React environment, like the browser or APIs. It’s similar to componentWillUpdate in that way, except
+						that it gets called <span style="font-style: italic">after</span> render instead of before.
+					</aside>
+				</section>
+				<section>
+					<ul>
+						<li>Mounting</li>
+						<li>Updating</li>
+						<li><span class="red">Unmounting</span>
+							<ul class="small">
+								<li class="fragment highlight-green">componentWillUnmount</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						A component’s unmounting period occurs when the component is removed from the DOM. This could happen
+						if the DOM is rerendered without the component, or if the user navigates to a different website or
+						closes their web browser. <br>
+						"componentWillUnmount" is the only unmounting lifecycle method! It gets called right before a component
+						is removed from the DOM. If a component initiates any methods that require cleanup, then
+						"componentWillUnmount" is where that cleanup should be put.
+					</aside>
+				</section>
+			</section>
+			<section>
+				<h3><span class="react">One-way data flow</span></h3>
+				<section>
+					<img src="src/one-way-data.png" class="data">
+					<aside class="notes">
+						In react data flows in one direction from parent to child. With this characteristic, it's not obvious
+						how two non parent-child components would communicate. Direct component-to-component communication is
+						error prone and leads to spaghetti code. This is where Redux can help.
+					</aside>
+				</section>
+				<section>
+					<img src="src/redux-data-flow.png" class="redux">
+					<aside class="notes">
+						Redux is a small library with a simple, limited API, designed to be a predictable container for
+						application state. Redux offers a solution of storing all your application state in one place,
+						called a "store". Components then "dispatch" state changes to the store, not directly to other
+						components. The components that need to be aware of state changes can "subscribe" to the store.
+					</aside>
+				</section>
+				<section>
+					<pre><code class="hljs" data-trim data-line-numbers>
+					{
+					userState: { ... },
+					widgetState: { ... }
+					}
+					</code></pre>
+					<aside class="notes">
+						Redux uses only one store for all its application state. Since all state resides in one place,
+						Redux calls this the single source of truth. The data structure of the store is typically a deeply
+						nested object. <br>
+						Such an approach reduces errors and makes it much easier to pass and access the props and state.
+					</aside>
+				</section>
+			</section>
+			<section>
+				<h2 class="firstSlide"><img src="src/1200px-React-icon.svg.png" class="icon">
+					<span class="react">Happy coding!</span>
+				</h2>
+				<br>
+				<h5>Alexandra Skirnevskaya</h5>
+			</section>
 		</div>
+	</div>
 
-		<script src="js/reveal.js"></script>
+	<script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+</body>
+
 </html>
